@@ -74,6 +74,10 @@ This are the steps to create a development environment suited for cross-platform
     `sudo apt-get install qemu qemu-user-static binfmt-support debootstrap`
 - Install miscellaneous tools:
     `sudo apt-get install git subversion curl wget`
+- Install tools for serial port communications:
+    `sudo apt-get install screen picocom`
+- Clean apt:
+    `sudo apt-get clean ; sudo apt-get autoclean ; sudo apt-get autoremove`
 - Download Arduino 1.5.5+ for Linux 64-bits into /usr/local:
     `cd /usr/local ; sudo wget http://downloads.arduino.cc/arduino-1.5.5-linux64.tgz`
     `sudo tar xfz arduino-1.5.5-linux64.tgz`
