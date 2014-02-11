@@ -12,6 +12,7 @@ This are the steps to create a development environment suited for cross-platform
 - 80GB disk space
 
 ## Vagrant file
+```ruby
     # -*- mode: ruby -*-
     # vi: set ft=ruby :
 
@@ -28,7 +29,7 @@ This are the steps to create a development environment suited for cross-platform
         v.memory = 512
       end
     end
-
+```
 ## Steps to generate box
 
 - Download Vagrant VirtualBox box file precise64 in your host. Ubuntu 12.04 64 bits Precise LTS:
