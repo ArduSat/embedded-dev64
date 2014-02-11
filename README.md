@@ -106,6 +106,7 @@ This are the steps to create a development environment suited for cross-platform
     `sudo chown -R nobody /tftpboot`
 - Create a folder for nfs exports in the default user home directory:
     `cd ; mkdir exports`
+    `chmod go+w exports`
 - Disconnect from your ssh session and shutdown your machine in the host:
     `vagrant halt`
 - Repackage your freshly created embedded development environment into a new box:
