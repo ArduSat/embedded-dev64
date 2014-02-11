@@ -184,9 +184,14 @@ sudo chmod -R 777 /tftpboot
 sudo chown -R nobody /tftpboot
 ```
 
-Configure the hostname with embedded-dev64:
+Set the hostname to embedded-dev64:
 ```
 sudoedit /etc/hostname
+```
+
+Change precise64 to embedded-dev64 (or whatever you set has hostname) in the hosts file:
+```
+sudoedit /etc/hosts
 ```
 
 Create a folder for nfs exports in the default user home directory:
