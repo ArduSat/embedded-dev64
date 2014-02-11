@@ -104,6 +104,8 @@ This are the steps to create a development environment suited for cross-platform
     `sudo mkdir /tftpboot`
     `sudo chmod -R 777 /tftpboot`
     `sudo chown -R nobody /tftpboot`
+- Configure the hostname with embedded-dev64:
+    `sudoedit /etc/hostname`
 - Create a folder for nfs exports in the default user home directory:
     `cd ; mkdir exports`
     `chmod go+w exports`
