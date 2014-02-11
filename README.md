@@ -72,6 +72,8 @@ This are the steps to create a development environment suited for cross-platform
     `sudo apt-get install multistrap dpkg-dev dpkg-cross`
 - Install qemu and tools for cross-architecture binaries:
     `sudo apt-get install qemu qemu-user-static binfmt-support debootstrap`
+- Install tftp support:
+    `sudo apt-get install xinetd tftpd tftp`
 - Install miscellaneous tools:
     `sudo apt-get install git subversion curl wget`
 - Install tools for serial port communications:
@@ -86,6 +88,24 @@ This are the steps to create a development environment suited for cross-platform
 - Add the following lines to the default user's profile (~/.profile):
     PATH="$PATH:/usr/local/arduino/hardware/tools"
     PS1="[\[\033[0;31m\]\u\[\033[0m\]@\h:\[\033[1;37m\]\w\[\033[0m\]]\$ "
+- Create tftpd configuration file on /etc/xinetd.d/tftp with the following:
+    service tftp
+    {
+    protocol        = udp
+    port            = 69
+    socket_type     = dgram
+    wait            = yes
+    user            = nobody
+    server          = /usr/sbin/in.tftpd
+    server_args     = /tftpboot
+    disable         = no
+    }
+- Configure tftpd:
+    `sudo mkdir /tftpboot`
+    `sudo chmod -R 777 /tftpboot`
+    `sudo chown -R nobody /tftpboot`
+- Create a folder for nfs exports in the default user home directory:
+    `cd ; mkdir exports`
 - Disconnect from your ssh session and shutdown your machine in the host:
     `vagrant halt`
 - Repackage your freshly created embedded development environment into a new box:
