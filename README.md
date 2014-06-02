@@ -37,6 +37,12 @@ Download Vagrant VirtualBox box file precise64 in your host. Ubuntu 12.04 64 bit
 vagrant box add precise64 http://files.vagrantup.com/precise64.box 
 ```
 
+Setup Virtual Box to use bridged connection by opening Vagrantfile and adding following line:
+```
+config.vm.network "public_network", bridge: 'Local Area Connection'
+```
+Replace 'Local Area Connection' with name of connection, otherwise on vagrant up you will be asked to choose which connection to bridge
+
 Run Vagrant in this directory or any directory that has the Vagrant listed in this document and let the provisioning run:
 ```
 vagrant up
