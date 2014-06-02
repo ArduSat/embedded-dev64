@@ -34,7 +34,7 @@ This are the steps to create a development environment suited for cross-platform
 
 Download Vagrant VirtualBox box file precise64 in your host. Ubuntu 12.04 64 bits Precise LTS:
 ```
-vagrant box add precise64 http://files.vagrantup.com/precise64.box virtualbox
+vagrant box add precise64 http://files.vagrantup.com/precise64.box 
 ```
 
 Run Vagrant in this directory or any directory that has the Vagrant listed in this document and let the provisioning run:
@@ -82,6 +82,8 @@ Turn on your VM again and connect to it:
 ```
 vagrant up; vagrant ssh
 ```
+
+If prompted, do not install grub.
 
 Install the compilers and build tools:
 ```
@@ -212,7 +214,7 @@ vagrant package --output embedded-dev64.box
 
 Add your new box to vagrant so it can be used in your future endeavors:
 ```
-vagrant box add embedded-dev64 embedded-dev64.box virtualbox
+vagrant box add embedded-dev64 embedded-dev64.box 
 ```
 
 Now you can use your embedded development environment under the name 'embedded-dev64'!
